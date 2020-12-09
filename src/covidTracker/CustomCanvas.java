@@ -35,27 +35,27 @@ public class CustomCanvas extends Canvas {
         
         public void update() { this.repaint(); }
         
-
-
-        
         public void paint(Graphics g){
         	int coords[];
         	
         	Color tempColor = new Color((float)Math.random(), (float)Math.random(), (float)Math.random());
             g.setColor(tempColor);
             g.drawImage(background, 0, 0, width, height, this);
-            g.drawOval((int)(Math.random()*width),(int)(Math.random()*height), 20, 20);
             
+            //Draw Grid
             int i;
             g.setColor(Color.GRAY);
-            // Draw rows
+            
             int rowHt = height / (rows);
             for (i = 0; i < rows; i++)
               g.drawLine(0, i * rowHt, width, i * rowHt);
 
-            // Draw columns
             int rowWid = width / (cols);
             for (i = 0; i < cols; i++)
               g.drawLine(i * rowWid, 0, i * rowWid, height);
+            
+            //Draw robot
+            g.drawOval((int)(Math.random()*width),(int)(Math.random()*height), 20, 20);
+
         }
 }
