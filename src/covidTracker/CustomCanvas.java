@@ -13,7 +13,7 @@ public class CustomCanvas extends Canvas {
 
         int width, height;
         int rows, cols;
-    	private BufferedImage background;
+    	private BufferedImage background, robot1;
 
 
         public CustomCanvas(int width, int height, int rows, int cols){
@@ -28,6 +28,7 @@ public class CustomCanvas extends Canvas {
                 //Background
                 try {
         			background = ImageIO.read(this.getClass().getResource("houseplan2.jpg"));
+        			robot1 = ImageIO.read(this.getClass().getResource("robot1.png"));
         		} catch (IOException ex) {
         			System.out.println("Could not find the image file " + ex.toString());
         		}
@@ -36,7 +37,6 @@ public class CustomCanvas extends Canvas {
         public void update() { this.repaint(); }
         
         public void paint(Graphics g){
-        	int coords[];
         	
         	Color tempColor = new Color((float)Math.random(), (float)Math.random(), (float)Math.random());
             g.setColor(tempColor);
@@ -55,7 +55,7 @@ public class CustomCanvas extends Canvas {
               g.drawLine(i * rowWid, 0, i * rowWid, height);
             
             //Draw robot
-            g.drawOval((int)(Math.random()*width),(int)(Math.random()*height), 20, 20);
-
+            g.drawOval((int)(Math.random()*width),(int)(Math.random()*height), 25, 25);
+            g.drawImage(robot1, (int)(Math.random()*width),(int)(Math.random()*height), 25, 25, this);
         }
 }
