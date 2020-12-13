@@ -55,15 +55,15 @@ public class CustomCanvas extends Canvas {
             for (i = 0; i < cols; i++)
               g.drawLine(i * rowWid, 0, i * rowWid, height);
             
+            //Draw compass
+            g.drawImage(compass, 225, 0, 50, 50, this);
+            
             //Draw robot
             g.drawImage(robot1, (int)(Math.random()*width),(int)(Math.random()*height), 25, 25, this);
             g.drawImage(robot1, (int)(Math.random()*width),(int)(Math.random()*height), 25, 25, this);
             g.drawImage(robot1, (int)(Math.random()*width),(int)(Math.random()*height), 25, 25, this);
             g.drawImage(robot1, (int)(Math.random()*width),(int)(Math.random()*height), 25, 25, this);
             g.drawImage(robot1, (int)(Math.random()*width),(int)(Math.random()*height), 25, 25, this);
-            
-            //Draw compass
-            g.drawImage(compass, 225, 0, 50, 50, this);
             
         }
 }

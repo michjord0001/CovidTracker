@@ -9,12 +9,14 @@ public class ThreadedConnectionHandler extends Thread
     private ObjectInputStream is = null;			// Input stream
     private ObjectOutputStream os = null;			// Output stream
     private DateTimeService theDateService;
+    private CovidRobot covidRobot;
     
 	// The constructor for the connection handler
     public ThreadedConnectionHandler(Socket clientSocket) {
         this.clientSocket = clientSocket;
         //Set up a service object to get the current date and time
         theDateService = new DateTimeService();
+        covidRobot = new CovidRobot("TempRobot", 15 , true, "Example Robot", true, false, 40, "North");
     }
 
     // Will eventually be the thread execution method - can't pass the exception back
@@ -48,6 +50,9 @@ public class ThreadedConnectionHandler extends Thread
         if (s.equalsIgnoreCase("GetDate")){ 
             this.getDate(); 
         }       
+        else if (s.equalsIgnoreCase("GetRobot")) {
+        	this.getRobot();
+        }       
         else { 
             this.sendError("Invalid command: " + s); 
         }
@@ -60,6 +65,11 @@ public class ThreadedConnectionHandler extends Thread
         this.send(currentDateTimeText);
     }
 
+    private void getRobot() {
+    	CovidRobot currentRobot = covidRobot.getRobot();
+    	this.send(currentRobot);
+    }
+    
     // Send a generic object back to the client 
     private void send(Object o) {
         try {

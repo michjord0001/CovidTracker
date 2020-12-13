@@ -49,6 +49,25 @@ public class Client {
     	}
     	System.out.println("06. -- Disconnected from Server.");
     }
+    
+    private void getRobot() {
+    	String theRobotCommand = "GetRobot";
+    	CovidRobot theRobot;
+    	System.out.println("01. -> Sending Command (" + theRobotCommand + ") to the server...");
+    	this.send(theRobotCommand);
+    	try {
+    		theRobot = (CovidRobot) receive();
+    		System.out.println("05. <- The Server responded with: ");
+    		System.out.println("    <- Robot Name: " + theRobot.getRobotName());
+    		System.out.println("    <- Robot Size: " + theRobot.getRobotSize());
+    		System.out.println("    <- Robot Role: " + theRobot.getRobotRole());
+    		System.out.println("    <- ...");
+    	}
+    	catch (Exception e) {
+    		System.out.println("XX. There was an invalid object sent back from the server");
+    	}
+    	System.out.println("06. -- Disconnected from the Server.");
+    }
 	
     // method to send a generic object.
     private void send(Object o) {
@@ -82,7 +101,7 @@ public class Client {
     	System.out.println("**. Java Client Application - EE402 OOP Module, DCU");
     	if(args.length==1){
     		Client theApp = new Client(args[0]);
-		    theApp.getDate();
+		    theApp.getRobot();
 		}
     	else
     	{
