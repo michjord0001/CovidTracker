@@ -57,7 +57,6 @@ public class CustomCanvas extends Canvas {
             
             //Draw robot
             g.drawImage(robot1, (int)(Math.random()*width),(int)(Math.random()*height), 25, 25, this);
-
             g.drawImage(robot1, (int)(Math.random()*width),(int)(Math.random()*height), 25, 25, this);
             g.drawImage(robot1, (int)(Math.random()*width),(int)(Math.random()*height), 25, 25, this);
             g.drawImage(robot1, (int)(Math.random()*width),(int)(Math.random()*height), 25, 25, this);
