@@ -17,7 +17,7 @@ public class CanvasApplication extends Frame implements ActionListener, WindowLi
                 this.refresh = new Button("Refresh");
                 this.add(refresh, BorderLayout.NORTH);
                 this.refresh.addActionListener(this);
-                this.canvas = new CustomCanvas(500,500, 25, 25);
+                this.canvas = new CustomCanvas(500, 500, 25, 25);
                 this.add(canvas, BorderLayout.CENTER);
                 this.addWindowListener(this);
                 this.pack();
