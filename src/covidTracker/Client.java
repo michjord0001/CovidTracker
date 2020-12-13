@@ -102,6 +102,9 @@ public class Client {
     	if(args.length==1){
     		Client theApp = new Client(args[0]);
 		    theApp.getRobot();
+		    new GridLayoutApp();		    
+		    new ComponentApplication();
+		    new CanvasApplication();
 		}
     	else
     	{

@@ -13,8 +13,8 @@ public class CustomCanvas extends Canvas {
 
         int width, height;
         int rows, cols;
-    	private BufferedImage background, robot1, compass;
-
+    	private BufferedImage background, robotImage, compass;
+    	//private CovidRobot;
 
         public CustomCanvas(int width, int height, int rows, int cols){
                 this.setSize(width,height);
@@ -28,7 +28,7 @@ public class CustomCanvas extends Canvas {
                 //Background
                 try {
         			background = ImageIO.read(this.getClass().getResource("houseplan2.jpg"));
-        			robot1 = ImageIO.read(this.getClass().getResource("robot1.png"));
+        			robotImage = ImageIO.read(this.getClass().getResource("robot1.png"));
         			compass = ImageIO.read(this.getClass().getResource("compass2.png"));
         		} catch (IOException ex) {
         			System.out.println("Could not find the image file " + ex.toString());
@@ -59,11 +59,11 @@ public class CustomCanvas extends Canvas {
             g.drawImage(compass, 225, 0, 50, 50, this);
             
             //Draw robot
-            g.drawImage(robot1, (int)(Math.random()*width),(int)(Math.random()*height), 25, 25, this);
-            g.drawImage(robot1, (int)(Math.random()*width),(int)(Math.random()*height), 25, 25, this);
-            g.drawImage(robot1, (int)(Math.random()*width),(int)(Math.random()*height), 25, 25, this);
-            g.drawImage(robot1, (int)(Math.random()*width),(int)(Math.random()*height), 25, 25, this);
-            g.drawImage(robot1, (int)(Math.random()*width),(int)(Math.random()*height), 25, 25, this);
+            g.drawImage(robotImage, (int)(Math.random()*width),(int)(Math.random()*height), 25, 25, this);
+            g.drawImage(robotImage, (int)(Math.random()*width),(int)(Math.random()*height), 25, 25, this);
+            g.drawImage(robotImage, (int)(Math.random()*width),(int)(Math.random()*height), 25, 25, this);
+            g.drawImage(robotImage, (int)(Math.random()*width),(int)(Math.random()*height), 25, 25, this);
+            g.drawImage(robotImage, (int)(Math.random()*width),(int)(Math.random()*height), 25, 25, this);
             
         }
 }
