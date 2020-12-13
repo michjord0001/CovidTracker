@@ -1,8 +1,5 @@
 package covidTracker;
 
-import java.awt.Point;
-
-@SuppressWarnings("serial")
 public class CovidRobot {
 
 	private int size;
@@ -11,17 +8,17 @@ public class CovidRobot {
 	private boolean hasConnection;
 	private boolean hasPower;
 	private boolean hasInfection;
-	public Point coordinates;
+	private int coordinates;
 	private String orientation;
 	
-	public CovidRobot(String name, int size, boolean hasConnection, String role, boolean hasPower, boolean infStat, String orient) {
+	public CovidRobot(String name, int size, boolean hasConnection, String role, boolean hasPower, boolean infStat, int coord, String orient) {
 		this.size = size;
 		this.name = name;
 		this.hasConnection = hasConnection;
 		this.role = role;
 		this.hasPower = hasPower;
 		this.hasInfection = hasInfection;
-		this.coordinates = new Point ((int)(Math.random()*(500)),(int)(Math.random()*(500))); //Assign random location on canvas to start
+		this.coordinates = coord;
 		this.orientation = orient;
         }
 	
@@ -31,7 +28,6 @@ public class CovidRobot {
 		System.out.println(" The robot has power: " + ((hasPower)?"Yes":"No"));
 		System.out.println(" The robot has a connection: " + ((hasConnection)?"Yes":"No"));
 		System.out.println(" Is the robot infected: " + ((hasInfection)?"Yes":"No"));
-		System.out.println(" The robot has location X=" + (int)coordinates.getX() + " and Y=" + (int)coordinates.getY() );
-		System.out.println(" The robot has orientation: " + orientation);
+		System.out.println(" The robot has location: " + coordinates + " and orientation: " + orientation);
 	}
 }

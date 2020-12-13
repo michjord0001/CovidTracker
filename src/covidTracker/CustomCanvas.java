@@ -5,6 +5,7 @@ import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
+
 import javax.imageio.ImageIO;
 
 @SuppressWarnings("serial")
@@ -14,8 +15,7 @@ public class CustomCanvas extends Canvas {
         int rows, cols;
     	private BufferedImage background, robot1, compass;
 
-		CovidRobot robot6 = new CovidRobot("Robot 6", 15 , true, "Kitchen Robot", true, false, "West");
-    	
+
         public CustomCanvas(int width, int height, int rows, int cols){
                 this.setSize(width,height);
                 this.width = width;
@@ -56,7 +56,7 @@ public class CustomCanvas extends Canvas {
               g.drawLine(i * rowWid, 0, i * rowWid, height);
             
             //Draw robot
-            g.drawImage(robot1, (int)robot6.coordinates.getX(), (int)robot6.coordinates.getY(), 25, 25, this);
+            g.drawImage(robot1, (int)(Math.random()*width),(int)(Math.random()*height), 25, 25, this);
             g.drawImage(robot1, (int)(Math.random()*width),(int)(Math.random()*height), 25, 25, this);
             g.drawImage(robot1, (int)(Math.random()*width),(int)(Math.random()*height), 25, 25, this);
             g.drawImage(robot1, (int)(Math.random()*width),(int)(Math.random()*height), 25, 25, this);
