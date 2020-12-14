@@ -1,7 +1,9 @@
 package covidTracker;
 
 public class CovidRobotInformationApp {
-
+	
+	public int safetyMargin = 2; //2 metres
+	
 	public static void main(String[] args) {
 		//String name, int size, boolean hasConnection, String role, boolean hasPower, boolean infStat, int coord, String orient) {
 						
@@ -12,7 +14,13 @@ public class CovidRobotInformationApp {
 		
 		robot2.display();
 	}
-
+	
+	public boolean isSafeDistance(CovidRobot r1, CovidRobot r2) {
+		if ((r1.getCoords() - r2.getCoords()) < (r1.getRobotSize() + r2.getRobotSize() + safetyMargin)){
+			return false;
+		}
+		else {
+			return true;
+		}
+	}
 }
-
-

@@ -46,6 +46,10 @@ public class CovidRobot implements Serializable {
 		return this.role;
 	}
 	
+	public int getCoords() {
+		return this.coordinates;
+	}
+	
 	public CovidRobot getRobot() {
 		CovidRobot robot1 = new CovidRobot("RoboDoc", 15 , true, "Medical Robot", true, false, 40, "North");
 		return robot1;
