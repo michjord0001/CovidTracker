@@ -18,7 +18,9 @@ public class GridLayoutApp extends Frame {
                  Scrollbar sb = new Scrollbar(Scrollbar.HORIZONTAL, 50, 10, 0, 100);
                  Label label1 = new Label("Speed Down", Label.RIGHT);
                  Label label2 = new Label("Speed Up", Label.LEFT);
-                 
+                 Button button7 = new Button("Send Covid-19 Distance Warning");
+                 Label label3 = new Label();
+                 Button button9 = new Button("SOS: Call for help");
                  
                  add(button1);
                  add(button2);
@@ -29,6 +31,9 @@ public class GridLayoutApp extends Frame {
                  add(label1);
                  add(sb);
                  add(label2);
+                 add(button7);
+                 add(label3);
+                 add(button9);
                 
                 this.pack();
                 this.setVisible(true);
